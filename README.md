@@ -43,8 +43,7 @@ int main(){
 char ch;int a;long long d;string s1,s2;double aa,bb;
 io>>ch>>a>>d>>s1>>aa>>bb,io<<ch<<a<<d<<s1<<aa<<bb;
 io.getline(s2),io<<s2,io.puts("123"),io<<"456";
-//<<输出操作不能与>>输入操作连在一起！
-io.go();//这一句千万别忘了加上！
+//<<输出操作不能与>>输入操作连在一起!
 ```
 **·** 判断EOF（使用重载类型转换运算符实现）
 
@@ -58,7 +57,7 @@ if(io)...
 //上面那个struct加在main前面，可以把不要的重载运算符删掉，比如只需要输入输出整数，就把输入输出字符串之类的删掉。
 //如果需要别的实现，请以getch和putch代替getchar和putchar，然后自行实现。
 //以下几个函数/变量千万不能删掉：
-//FastIO,go,getch,putch,rbuf,wbuf,p1,p2,rfile,wfile,rs,ws
+//FastIO,~FastIO,getch,putch,rbuf,wbuf,p1,p2,rfile,wfile,rs,ws
 //有时编译时可能会有警告，不用担心，可放心使用。
 //警告原因：
 //1.输出C风格字符串的函数参数不是const类型，输出字符串常量时会警告。

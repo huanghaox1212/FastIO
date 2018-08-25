@@ -11,7 +11,7 @@ class FastIO{
     int rs,ws,S;
     public:
         FastIO():p1(rbuf),p2(wbuf),S(1000000),rs(1000000),ws(-1),b(1){}
-        ~FastIO{fwrite(wbuf,1,ws+1,stdout);}
+        ~FastIO(){fwrite(wbuf,1,ws+1,stdout);}
         inline char getch(){
             return rs==S&&
             (p1=rbuf,rs=-1,(S=fread(rbuf,1,S+1,stdin)-1)==-1)?
@@ -22,7 +22,8 @@ class FastIO{
             (p2=wbuf,ws=-1,fwrite(wbuf,1,1000001,stdout)),++ws,*p2++=x;
         }
         inline void puts(const char str[]){
-            go(),fwrite(str,1,strlen(str),stdout);
+            fwrite(wbuf,1,ws+1,stdout)?(ws=-1):0,
+            fwrite(str,1,strlen(str),stdout);
         }
         inline void getline(string& s){
             for(reg char ch;(ch=getch())!='\n'&&fok;)s+=ch;

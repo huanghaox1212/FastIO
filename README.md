@@ -8,7 +8,7 @@ $update1:$应某用户建议，已将模板改为$class$。
 $update2:$某用户发现$puts$函数运行效率存在问题，已更正。  
 $update3:$应某用户建议，已修改go函数至析构函数。  
 $update4:$为防止用户使用错误，将FastIO的对象的定义置于模板中。  
-$update5:$删去了rfile和wfile。   
+$update5:$删去了rfile和wfile。  
 详情请参照正文。  
 如果您按照指定方法使用仍然存在bug，请私信我。
 ## 使用说明

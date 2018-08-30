@@ -76,7 +76,7 @@ class FastIO{
         }
         inline FastIO& operator<<(char ch){return putch(ch),*this;}
         inline FastIO& operator<<(char str[]){return puts(str),*this;}
-        inline FastIO& operator<<(string s){return puts(s.c_str()),*this;}
+        inline FastIO& operator<<(const string& s){return puts(s.c_str()),*this;}
         inline FastIO& operator<<(double x){
             int y=int(x);
             *this<<y;

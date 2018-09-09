@@ -9,6 +9,7 @@
 > **有些人说本模板太长，我在这里做出统一答复：模板长是因为要实现全面的操作和维护使用安全性，只需要记忆getch和putch函数以代替getchar和putchar就行。还嫌长那就先去把getchar和putchar学会吧。**
 
 > 所以要记忆本模板时，**比起普通的快速读写只需要多记忆2个函数而已，getch和putch**。
+在洛谷的链接：https://www.luogu.org/blog/Howershine950644/post-mu-ban-zhen-zheng-di-du-xie-you-hua
 ## Updates
 update1:应某用户建议，已将模板改为class。  
 update2:某用户发现puts函数运行效率存在问题，已更正。  

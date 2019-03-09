@@ -1,7 +1,7 @@
 # FastIO
 ## 简介
 用fread和fwrite优化了putchar和getchar函数，平均每次读写1000000字节。  
-使用常规方式实现了整数、长整数、浮点数、C风格字符串和C++标准库中的string类型等的读写以及eof的判断（这在读写不定量数据时是必须的，例如while(io>>x)）。  
+使用常规方式实现了整数、长整数、浮点数、C风格字符串和C++标准库中的string类型等的读写以及eof的判断（这在读写不定量数据时是必须的，例如while(io>>x)）。  以及控制类型。
 所有数据以及方法包装在一个class内，加入了常数优化。
 ## Note
 > 注意，如果您有正确使用freadfwrite的能力，请拆开此模板，使用裸的freadfwrite。本模板为了安全性和完整性包装了许多东西，虽然加了很多常数优化，直接使用freadfwrite还是会更快。
@@ -17,7 +17,8 @@ update2:某用户发现puts函数运行效率存在问题，已更正。
 update3:应某用户建议，已修改go函数至析构函数。  
 update4:为防止用户使用错误，将FastIO的对象的定义置于模板中。  
 update5:删去了rfile和wfile。  
-update6:应某用户建议，输出stringstring的函数参数类型改为了const string&。
+update6:应某用户建议，输出stringstring的函数参数类型改为了const string&。  
+update7: 经核实发现本模板在效率方面有一些问题，进行了全面修改，并加入_endl和_prs和_setprecision等控制类型。  
 
 详情请参照正文。  
 如果您按照指定方法使用仍然存在bug，请私信我。
@@ -57,11 +58,17 @@ io.getline(s2),io<<s2,io.puts("123"),io<<"456";
 //<<输出操作不能与>>输入操作连在一起!
 ```
 **·** 判断EOF（使用重载类型转换运算符实现）
-
-这是本模板的优点，网上的代码均无法**正确**判断EOF.
 ```cpp
 while(io>>ch)io<<ch;//判断方法与cin类似。
 if(io)...
+```
+**·** 控制类型的使用
+```cpp
+io<<_endl;//换行
+io<<_prs(true);//从现在开始，一律选择进行四舍五入
+io<<_prs(false);//从现在开始，一律不进行四舍五入
+io<<_setprecision(k);//从现在开始，一律保留k位小数
+//注意：控制类型仅为方便习惯于iostream的用户来使用，平时尽量不要用，否则会对效率进行影响。
 ```
 **·** 其他
 ```cpp

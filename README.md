@@ -75,9 +75,9 @@ io<<_setprecision(k);//从现在开始，一律保留k位小数
 //那个模板中，可以把不要的重载运算符删掉，比如只需要输入输出整数，就把输入输出字符串之类的删掉。
 //如果需要别的实现，请以getch和putch代替getchar和putchar，然后自行实现。
 //以下几个函数/变量千万不能删掉：
-//FastIO,~FastIO,getch,putch,rbuf,wbuf,p1,p2,rs,ws
+//FastIO,~FastIO,getch,putch,in,out,p,pp,q,qq
 //有时编译时可能会有警告，不用担心，可放心使用。
 //警告原因：
-//1.输出C风格字符串的函数参数不是const类型，输出字符串常量时会警告。
+//1.输出C风格字符串的函数参数是const类型，输出字符串变量时会警告。
 //2.为了常数优化，部分int换成了char，某些编译器会进行警告。
 ```

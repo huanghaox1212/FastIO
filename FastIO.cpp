@@ -49,7 +49,7 @@ struct FastIO{
         return x=f?-x:x,*this;
 	}
 	#define outdef(_T) inline FastIO& operator<<(_T x){\
-		!x&&(putch('0'),0),x<0&&(putch('-'),x=-x);\
+		(!x)&&(putch('0'),0),x<0&&(putch('-'),(x=-x));\
 		while(x)*t++=x%10+48,x/=10;\
 		while(t!=ch)*q++=*--t;\
 		return *this;\
@@ -74,6 +74,7 @@ struct FastIO{
 			case 1:prs=cl.val;break;
 			case 2:K=cl.val;break;
 		}
+		return *this;
 	}
 	inline operator bool(){return b;}
 }io;
